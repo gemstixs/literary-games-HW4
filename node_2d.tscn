@@ -1,0 +1,104 @@
+[gd_scene load_steps=10 format=3 uid="uid://dh7cnxqim2wij"]
+
+[ext_resource type="Texture2D" uid="uid://np502fvixhv6" path="res://scene/space bg.jpeg" id="1_fsmm4"]
+[ext_resource type="Texture2D" uid="uid://bqa8fwvqpi82r" path="res://scene/sun (1).png" id="2_8ji6c"]
+[ext_resource type="Script" path="res://scripts/Rotate.gd" id="3_1bmed"]
+[ext_resource type="Texture2D" uid="uid://bf2kc0o0hnj4j" path="res://scene/venus.png" id="4_2yp58"]
+[ext_resource type="Texture2D" uid="uid://bgptxbet63rgk" path="res://scene/mars.png" id="4_vl5oc"]
+[ext_resource type="Texture2D" uid="uid://ba4vcqa50a1i3" path="res://scene/mercury.png" id="6_fhudn"]
+[ext_resource type="Texture2D" uid="uid://cycr2uyvowsnn" path="res://scene/moon (1).png" id="6_lcq6v"]
+[ext_resource type="Texture2D" uid="uid://cig6sag2a5yid" path="res://scene/saturn.png" id="7_2f2yj"]
+[ext_resource type="Texture2D" uid="uid://dnoq1mui6fn65" path="res://scene/jupiter.png" id="8_t3r44"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="SpaceBg" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(2872.25, 1666.5)
+scale = Vector2(0.981468, 1.06356)
+texture = ExtResource("1_fsmm4")
+
+[node name="planet1orbit" type="Node2D" parent="."]
+position = Vector2(1438.39, 963.6)
+scale = Vector2(1.69539, 1.8594)
+script = ExtResource("3_1bmed")
+rotation_speed = 0.003
+
+[node name="planet1" type="Sprite2D" parent="planet1orbit"]
+position = Vector2(0, 149.511)
+scale = Vector2(0.127741, 0.121847)
+texture = ExtResource("4_2yp58")
+script = ExtResource("3_1bmed")
+rotation_speed = 0.06
+
+[node name="Sun" type="Sprite2D" parent="."]
+position = Vector2(1438.39, 963.6)
+scale = Vector2(0.607, 0.6)
+texture = ExtResource("2_8ji6c")
+script = ExtResource("3_1bmed")
+rotation_speed = 0.001
+
+[node name="planet2orbit" type="Node2D" parent="."]
+position = Vector2(1438.39, 963.6)
+script = ExtResource("3_1bmed")
+rotation_speed = -0.008
+
+[node name="planet2" type="Sprite2D" parent="planet2orbit"]
+position = Vector2(0, 524)
+scale = Vector2(0.259766, 0.263672)
+texture = ExtResource("4_vl5oc")
+script = ExtResource("3_1bmed")
+rotation_speed = 0.07
+
+[node name="moon-planet2" type="Sprite2D" parent="planet2orbit/planet2"]
+position = Vector2(433.506, 16.6875)
+scale = Vector2(0.255638, 0.259258)
+texture = ExtResource("6_fhudn")
+script = ExtResource("3_1bmed")
+rotation_speed = 0.005
+
+[node name="planet3orbit" type="Node2D" parent="."]
+position = Vector2(1438.39, 963.6)
+script = ExtResource("3_1bmed")
+rotation_speed = 0.015
+
+[node name="planet3" type="Sprite2D" parent="planet3orbit"]
+position = Vector2(0, 691)
+scale = Vector2(0.134766, 0.130859)
+texture = ExtResource("6_lcq6v")
+script = ExtResource("3_1bmed")
+rotation_speed = 0.04
+
+[node name="planet4orbit" type="Node2D" parent="."]
+position = Vector2(1438.28, 964.32)
+scale = Vector2(1.69539, 1.8594)
+script = ExtResource("3_1bmed")
+rotation_speed = 0.02
+
+[node name="planet4" type="Sprite2D" parent="planet4orbit"]
+position = Vector2(2.08165e-12, 477.401)
+scale = Vector2(0.255749, 0.235291)
+texture = ExtResource("7_2f2yj")
+script = ExtResource("3_1bmed")
+rotation_speed = 0.02
+
+[node name="planet5orbit" type="Node2D" parent="."]
+position = Vector2(1438.28, 964.32)
+scale = Vector2(1.69539, 1.8594)
+script = ExtResource("3_1bmed")
+rotation_speed = -0.03
+
+[node name="planet5" type="Sprite2D" parent="planet5orbit"]
+position = Vector2(2.08165e-12, 617.769)
+scale = Vector2(0.148611, 0.140754)
+texture = ExtResource("8_t3r44")
+script = ExtResource("3_1bmed")
+rotation_speed = 0.07
+
+[node name="moon-planet5" type="Sprite2D" parent="planet5orbit/planet5"]
+position = Vector2(-369.235, -107.939)
+scale = Vector2(0.25194, 0.257463)
+texture = ExtResource("6_fhudn")
+script = ExtResource("3_1bmed")
+rotation_speed = 0.005
